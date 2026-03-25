@@ -47,7 +47,8 @@ def test_below_absolute_zero_raises():
     (32.0, 'F', 'C', 0),
     (32.0, 'F', 'K', -ABSOLUTE_ZERO_C),
     (-ABSOLUTE_ZERO_C, 'K', 'C', 0),
-    (-ABSOLUTE_ZERO_C, 'K', 'F', 32.0)
+    (-ABSOLUTE_ZERO_C, 'K', 'F', 32.0),
+    (-1, 'K', 'C', 0)
 ])
 def test_convert(value, from_unit, to_unit, expected_f):
     assert convert(value, from_unit, to_unit) == pytest.approx(expected_f)
