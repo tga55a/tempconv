@@ -40,13 +40,11 @@ def test_c_to_f_cases(c, expected_f):
 
 
 @pytest.mark.edge
-
 def test_absolute_zero_kelvin():
     assert celsius_to_kelvin(-273.15) == pytest.approx(0.0)
 
 
 @pytest.mark.edge
-
 def test_below_absolute_zero_raises():
     with pytest.raises(ValueError):
         celsius_to_kelvin(-300)
