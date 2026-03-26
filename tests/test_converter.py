@@ -31,7 +31,6 @@ def test_boiling_c_to_f(boiling_point):
         (37, 98.6),   # body temperature
     ],
 )
-
 def test_c_to_f_cases(c, expected_f):
     assert convert(c, "C", "F") == pytest.approx(expected_f, rel=1e-3)
 
@@ -62,6 +61,5 @@ def test_below_absolute_zero_raises():
         (-1, "K", "C", 0),
     ],
 )
-
 def test_convert(value, from_unit, to_unit, expected_f):
     assert convert(value, from_unit, to_unit) == pytest.approx(expected_f)
