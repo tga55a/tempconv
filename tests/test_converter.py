@@ -1,11 +1,18 @@
 import pytest
-from src.converter import ABSOLUTE_ZERO_C, celsius_to_fahrenheit, celsius_to_kelvin, convert
+from src.converter import (
+    ABSOLUTE_ZERO_C,
+    celsius_to_fahrenheit,
+    celsius_to_kelvin,
+    convert,
+)
 
 # ── Basic tests using fixtures ──────────────────────────────────
+
 
 def test_freezing_c_to_f(freezing_point):
     # freezing_point is injected from conftest.py
     assert celsius_to_fahrenheit(freezing_point["C"]) == freezing_point["F"]
+
 
 def test_boiling_c_to_f(boiling_point):
     assert celsius_to_fahrenheit(boiling_point["C"]) == boiling_point["F"]
